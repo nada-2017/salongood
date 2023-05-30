@@ -17,7 +17,19 @@ import java.util.Set;
 public class Appointment {
     @Id
     private Integer id;
-
+    
+    private Integer day;
+    
+    private Integer month;
+    
+    private Integer year;
+    
+    private Integer hour;
+    
+    @OneToOne
+    @MapsId
+    @JsonIgnore
+    private Customer customer;
 
     @ManyToOne
     @JoinColumn(name = "staff_id" , referencedColumnName = "id")
